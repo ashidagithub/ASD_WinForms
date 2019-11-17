@@ -33,7 +33,7 @@ window_w = bk_img.width()
 window_h = bk_img.height()
 screen_w = top_win.winfo_screenwidth()
 screen_h = top_win.winfo_screenheight()
-# CENYTER screen
+# CENTER screen
 x = (screen_w - window_w) / 2
 y = (screen_h - window_h) / 2
 # 注意参数类型是字符串。是 w*h+/-x+/-y的格式。

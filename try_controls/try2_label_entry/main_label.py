@@ -5,7 +5,7 @@
 # created:  2019.11
 
 # Description:
-#   初步学习 WinForm 编程 ( Window )
+#   初步学习 WinForm 编程 ( Label )
 # ------------------------(max to 80 columns)-----------------------------------
 
 import tkinter as tk
@@ -37,14 +37,6 @@ lbl_hello.pack()    # Label内容content区域放置位置，自动调节尺寸
 lbl_programmer = tk.Label(
     top_win, text='I am a programmer!', font=('Arial', 20), )
 lbl_programmer.place(x=50, y=100, anchor='nw')
-
-# Try 2: Text是tkinter类中提供的的一个多行文本区域，显示多行文本，
-# 可用来收集(或显示)用户输入的文字(类似 HTML 中的 textarea)，格式化文本显示，
-# 允许你用不同的样式和属性来显示和编辑文本，同时支持内嵌图象和窗口。
-text_description = tk.Text(top_win, height=3)
-text_description.pack()
-
-
 
 # show window and waiting for event
 top_win.mainloop()

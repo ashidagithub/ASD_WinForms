@@ -5,7 +5,7 @@
 # created:  2019.11
 
 # Description:
-#   初步学习 WinForm 编程 ( Window )
+#   初步学习 WinForm 编程 ( Entry, Text )
 # ------------------------(max to 80 columns)-----------------------------------
 
 import tkinter as tk
