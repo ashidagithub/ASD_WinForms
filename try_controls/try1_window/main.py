@@ -41,7 +41,7 @@ y = (screen_h - window_h) / 2
 win_size_pos = "%dx%d+%d+%d" % (window_w, window_h, x, y)
 top_win.geometry(win_size_pos)
 print(win_size_pos)
-
+# 放置背景图片
 lbl_bk = tk.Label(top_win, image=bk_img)
 lbl_bk.place(x=0, y=0, relwidth=1, relheight=1)
 
