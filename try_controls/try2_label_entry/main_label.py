@@ -9,7 +9,7 @@
 # ------------------------(max to 80 columns)-----------------------------------
 
 import tkinter as tk
-
+from PIL import Image, ImageTk
 
 # create root window
 top_win = tk.Tk()
@@ -20,7 +20,14 @@ top_win.title('Hello World Window')
 # resize root window
 top_win.geometry('800x600')
 
-# Try 1: Label：显示一个文本或图象。
+# Try 1: 用 lable 显示背景图片
+image = Image.open(r'mybk.jpg')
+bk_img = ImageTk.PhotoImage(image)
+# 放置背景图片
+lbl_bk = tk.Label(top_win, image=bk_img)
+lbl_bk.place(x=0, y=0, relwidth=1, relheight=1)
+
+# Try 2: Label：显示一个文本标签
 # 在图形界面上设定标签
 lbl_hello = tk.Label(top_win, text='Hello World!', bg='blue',
                      font=('Arial', 12), width=30, height=2)
@@ -38,5 +45,31 @@ lbl_programmer = tk.Label(
     top_win, text='I am a programmer!', font=('Arial', 20), )
 lbl_programmer.place(x=50, y=100, anchor='nw')
 
+# Try 3： 用Label 显示动图 gif
+'''
+image = Image.open('RPS_animation.gif')
+animation_img = ImageTk.PhotoImage(image)
+lbl_animation = tk.Label(top_win)
+lbl_animation.configure(image=animation_img)
+lbl_animation.image = animation_img
+#lbl_animation.place(x=50, y=300, anchor='nw')
+lbl_animation.pack()
+
+frames = [ImageTk.PhotoImage(file='RPS_animation.gif',format = 'gif -index %i' %(i)) for i in range(3)]
+print(frames[0])
+print(frames[1])
+print(frames[2])
+def update(ind):
+    if ind>=3:
+        ind = 0
+    frame = frames[ind]
+    #print(ind)
+    ind += 1
+    lbl_animation.configure(image=frame)
+    top_win.after(3, update, ind)
+lbl_animation = tk.Label(top_win)
+lbl_animation.pack()
+top_win.after(3, update, 0)
+'''
 # show window and waiting for event
 top_win.mainloop()

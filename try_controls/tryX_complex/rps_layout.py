@@ -26,7 +26,7 @@ top_win.title('Rock Paper Scissors Game')
 win_size_pos = main_win.get_win_size_pos_standard(top_win)
 # place root window
 top_win.geometry(win_size_pos)
-
+top_win.resizable(False, False)
 # ----------------------------------------------------------
 # Step 2: 放置机器人头像
 lbl_robot = tk.Label(top_win, text='Robot', bg='yellow')
