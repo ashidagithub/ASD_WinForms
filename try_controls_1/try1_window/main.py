@@ -24,8 +24,9 @@ top_win = tk.Tk()
 top_win.title('Hello World Window')
 
 # resize root window
-# top_win.geometry('800x600')
+win_size_pos = '800x600'
 
+'''
 image = Image.open(r'mybk.jpg')
 bk_img = ImageTk.PhotoImage(image)
 # print(bk_img)
@@ -39,11 +40,13 @@ y = (screen_h - window_h) / 2
 # 注意参数类型是字符串。是 w*h+/-x+/-y的格式。
 # x和y是位置（一般是窗口相对屏幕的坐标）
 win_size_pos = "%dx%d+%d+%d" % (window_w, window_h, x, y)
-top_win.geometry(win_size_pos)
-print(win_size_pos)
 # 放置背景图片
 lbl_bk = tk.Label(top_win, image=bk_img)
 lbl_bk.place(x=0, y=0, relwidth=1, relheight=1)
+'''
 
-# 进入消息循环
+top_win.geometry(win_size_pos)
+print(win_size_pos)
+
+# show window and get into event loop
 top_win.mainloop()

@@ -71,5 +71,5 @@ lbl_animation = tk.Label(top_win)
 lbl_animation.pack()
 top_win.after(3, update, 0)
 '''
-# show window and waiting for event
+# show window and get into event loop
 top_win.mainloop()

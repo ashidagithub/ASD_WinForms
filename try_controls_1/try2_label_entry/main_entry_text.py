@@ -36,5 +36,6 @@ entry_ciphertext.pack()
 text_description = tk.Text(top_win, height=3)
 text_description.pack()
 
-# show window and waiting for event
+
+# show window and get into event loop
 top_win.mainloop()

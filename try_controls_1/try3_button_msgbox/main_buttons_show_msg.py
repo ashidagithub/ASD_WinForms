@@ -11,6 +11,10 @@
 import tkinter as tk
 import tkinter.messagebox #这个是消息框，对话框的关键
 
+'''
+参考示例：
+https://www.jianshu.com/p/dc764cec9fa9
+'''
 def cmd_print():
     print('Show in command window...')
     return
@@ -25,7 +29,7 @@ def cmd_pop():
 top_win = tk.Tk()
 
 # naming top_win window
-top_win.title('None World Window')
+top_win.title('Hello World Window')
 
 # resize root window
 top_win.geometry('800x600')

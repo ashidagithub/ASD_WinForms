@@ -15,7 +15,7 @@ from PIL import Image, ImageTk
 top_win = tk.Tk()
 
 # naming top_win window
-top_win.title('None World Window')
+top_win.title('Hello World Window')
 
 # resize root window
 top_win.geometry('800x600')
