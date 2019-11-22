@@ -13,8 +13,13 @@
 
 import tkinter as tk
 import random
+from PIL import Image, ImageTk
+import os
+#import sys
+# ---------------------------------------------------
 
-import pkg_place_controls.main_win as main_win
+#sys.path.append('..')
+# ---------------------------------------------------
 
 # ----------------------------------------------------------
 # Step 1: 创建主窗口
@@ -23,13 +28,16 @@ top_win = tk.Tk()
 # naming root window
 top_win.title('Rock Paper Scissors Game')
 # calculate root window's size and posiztion
-win_size_pos = main_win.get_win_size_pos_standard(top_win)
+win_size_pos = '600x600'
 # place root window
 top_win.geometry(win_size_pos)
 top_win.resizable(False, False)
 # ----------------------------------------------------------
 # Step 2: 放置机器人头像
-lbl_robot = tk.Label(top_win, text='Robot', bg='yellow')
+img_path = os.getcwd() + '\\images\\robot.jpg'
+image = Image.open(img_path)
+robot_img = ImageTk.PhotoImage(image)
+lbl_robot = tk.Label(top_win, text='Robot', bg='yellow', image=robot_img)
 lbl_robot.place(x=40, y=40, width=140, height=200)
 
 # ----------------------------------------------------------
@@ -71,34 +79,50 @@ lbl_current_score.place(x=340, y=200, width=40, height=40)
 
 # ----------------------------------------------------------
 # Step 6: 放置历届比赛信息框、得分框
-lbl_history_race_title = tk.Label(top_win, text='History Score List', bg='gray')
+lbl_history_race_title = tk.Label(
+    top_win, text='History Score List', bg='gray')
 lbl_history_race_title.place(x=40, y=260, width=340, height=40)
 
 lbl_history_race = []
 for idx in range(13):
-    score_name = tk.Label(top_win, text='Score=XX  Player is xxxxxxxx', bg='white')
-    score_name.place(x=40, y=(300+idx*20), width=200, height=20)
+    score_name = tk.Label(
+        top_win, text='Score=XX  Player is xxxxxxxx', bg='white')
+    score_name.place(x=40, y=(300 + idx * 20), width=200, height=20)
 
-    score_detail = tk.Label(top_win, text='Vict=XX Draw=XX Lose=XX', bg='white')
-    score_detail.place(x=240, y=(300+idx*20), width=140, height=20)
+    score_detail = tk.Label(
+        top_win, text='Vict=XX Draw=XX Lose=XX', bg='white')
+    score_detail.place(x=240, y=(300 + idx * 20), width=140, height=20)
 
     score_info = (score_name, score_detail)
     lbl_history_race.append(score_info)
 
 # ----------------------------------------------------------
 # Step 7: 放置比赛开始按钮
-btn_start = tk.Button(top_win, text="Start Game", bg='green', command=None)
+img_path = os.getcwd() + '\\images\\start_game.jpg'
+image = Image.open(img_path)
+start_img = ImageTk.PhotoImage(image)
+btn_start = tk.Button(top_win, image=start_img, relief='flat', command=None)
 btn_start.place(x=420, y=40, width=140, height=40)
 
 # ----------------------------------------------------------
 # Step 8: 放置石头剪子布按钮
-btn_rock = tk.Button(top_win, text="Rock", bg='white', command=None)
+img_path = os.getcwd() + '\\images\\rock.png'
+image = Image.open(img_path)
+rock_img = ImageTk.PhotoImage(image)
+btn_rock = tk.Button(top_win, image=rock_img, relief='raised', command=None)
 btn_rock.place(x=420, y=100, width=140, height=140)
 
-btn_paper = tk.Button(top_win, text="Paper", bg='white', command=None)
+img_path = os.getcwd() + '\\images\\paper.png'
+image = Image.open(img_path)
+paper_img = ImageTk.PhotoImage(image)
+btn_paper = tk.Button(top_win, image=paper_img, relief='raised', command=None)
 btn_paper.place(x=420, y=260, width=140, height=140)
 
-btn_scissors = tk.Button(top_win, text="Scissors", bg='white', command=None)
+img_path = os.getcwd() + '\\images\\scissors.png'
+image = Image.open(img_path)
+scissors_img = ImageTk.PhotoImage(image)
+btn_scissors = tk.Button(top_win, image=scissors_img,
+                         relief='raised', command=None)
 btn_scissors.place(x=420, y=420, width=140, height=140)
 
 # Step FINAL
