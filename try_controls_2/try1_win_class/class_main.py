@@ -43,16 +43,19 @@ class AppUI:
         # tk.messagebox.showinfo(title='Information', message='Show random RGB color for label') # 提示信息对话窗
         self.lbl_info['text'] = '欢迎学习Python'
         # 生成3个随机数，并凑成 RGB 模式
-        ct = [random.randrange(256) for x in range(3)]
+        #ct = [random.randrange(256) for x in range(3)]
+        color_R = random.randrange(256)
+        color_G = random.randrange(256)
+        color_B = random.randrange(256)
         # 计算该 RGB 色的灰度
         '''
 　　    # 对于彩色转灰度，有一个很著名的心理学公式：
         # Gray = R*0.299 + G*0.587 + B*0.114
         '''
-        #grayness = int(round(0.299 * ct[0] + 0.587 * ct[1] + 0.114 * ct[2]))
-        grayness = (ct[0] * 299 + ct[1] * 587 + ct[2] * 114 + 500) / 1000
+        #grayness = int(round(0.299 * color_R + 0.587 * color_G + 0.114 * color_B))
+        grayness = (color_R * 299 + color_G * 587 + color_B * 114 + 500) / 1000
         # 将元组中3个随机数格式化成16进制数,转成颜色格式
-        bg_color = "#%02x%02x%02x" % tuple(ct)
+        bg_color = "#%02x%02x%02x" % (color_R, color_G, color_B)
         # print(bg_color)
         self.lbl_info['bg'] = bg_color
         # 前景色默认为黑色，如果灰度大于 125 则变为白色
