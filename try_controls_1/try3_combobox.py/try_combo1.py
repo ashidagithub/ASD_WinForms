@@ -21,18 +21,19 @@ top_win.title('Hello World Window')
 win_size_pos = '800x600'
 top_win.geometry(win_size_pos)
 
-
+# -------------------------------------
 def func_comb_selected(event):
     'combox 选择数据后，自动执行的函数'
     info = combo_test.get()
     lbl_info['text'] = info
+# -------------------------------------
 
 
 # 创建一个下拉列表
 #combo_test = ttk.Combobox(top_win, width=12, textvariable=number)
-combo_test = ttk.Combobox(top_win, width=12)
+combo_test = ttk.Combobox(top_win, width=12, state='readonly')
 # combo_test['values'] = ('加','减', '乘','除')     # 设置下拉列表的值
-combo_test['values'] = ('上海', '北京', '天津', '广州')     # 设置下拉列表的值
+combo_test['values'] = (1, 2, 3, 4, 5, 6)     # 设置下拉列表的值
 combo_test.pack()
 combo_test.current(0)    # 设置下拉列表默认显示的值，0为 combo_test['values'] 的下标值
 
