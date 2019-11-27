@@ -25,6 +25,7 @@ top_win.title('Hello World Window')
 
 # resize root window
 win_size_pos = '800x600'
+top_win.geometry(win_size_pos)
 
 '''
 image = Image.open(r'mybk.jpg')
@@ -45,8 +46,6 @@ lbl_bk = tk.Label(top_win, image=bk_img)
 lbl_bk.place(x=0, y=0, relwidth=1, relheight=1)
 '''
 
-top_win.geometry(win_size_pos)
-print(win_size_pos)
 
 # show window and get into event loop
 top_win.mainloop()
