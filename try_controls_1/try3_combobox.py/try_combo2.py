@@ -30,21 +30,23 @@ city_JS = ('南京市', '无锡市', '徐州市', '常州市', '苏州市', '南
            '连云港市', '淮安市', '盐城市', '扬州市', '镇江市', '泰州市', '宿迁市')
 city_ZJ = ('杭州市', '宁波市', '温州市', '嘉兴市', '湖州市',
            '绍兴市', '金华市', '衢州市', '舟山市', '台州市', '丽水市')
-data_cities=(city_AH,city_JS,city_ZJ)
+data_cities = (city_AH, city_JS, city_ZJ)
 
 # -------------------------------------
 def func_comb1_selected(event):
     '主从 combo 联动函数'
     sn = combo_province.current()
-    #print(sn)
+    # print(sn)
     combo_city['values'] = data_cities[sn]
     combo_city.current(0)
     refresh_lbl()
     return
 
+
 def func_comb2_selected(event):
     refresh_lbl()
     return
+
 
 def refresh_lbl():
     p = combo_province.get()
@@ -52,6 +54,7 @@ def refresh_lbl():
     lbl_info['text'] = '地址：%s %s' % (p, c)
     return
 # -------------------------------------
+
 
 # 创建第一个下拉列表 - 省
 combo_province = ttk.Combobox(top_win, width=20, state='readonly')
@@ -68,9 +71,9 @@ combo_city.current(0)    # 设置下拉列表默认显示的值，0为 combo_cit
 combo_city.bind("<<ComboboxSelected>>", func_comb2_selected)
 
 # 创建一个信息框
-lbl_info = tk.Label(top_win, width=100, height=20, text='Please select...')
-lbl_info.place(x=40, y=100)
-
+lbl_info = tk.Label(top_win, width=280, height=20,
+                    anchor='nw', text='请选择省市...')
+lbl_info.place(x=40, y=80)
 
 # show window and get into event loop
 top_win.mainloop()
