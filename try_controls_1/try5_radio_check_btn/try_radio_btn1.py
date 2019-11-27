@@ -39,17 +39,21 @@ var_sel.set(),设置默认值
 var_sel.get()，获取选中的值
 '''
 var_sel = tk.IntVar()
-var_sel.set(1)
+var_sel.set(1)  # default value
 
-radio_btn1 = tk.Radiobutton(frame_root1, text="one", value=1, variable=var_sel, bg="blue")
+def show_selected():
+    print(var_sel.get())
+    return
+
+radio_btn1 = tk.Radiobutton(frame_root1, text="one", value=1, variable=var_sel, bg="blue", command=show_selected)
 radio_btn1.grid(row=0, column=0)
 
-radio_btn2 = tk.Radiobutton(frame_root1, text="two", value=2, variable=var_sel, bg="blue")
+radio_btn2 = tk.Radiobutton(frame_root1, text="two", value=2, variable=var_sel, bg="blue", command=show_selected)
 radio_btn2.grid(row=0, column=1)
 
-radio_btn3 = tk.Radiobutton(frame_root1, text="three", value=3, variable=var_sel, bg="blue")
+radio_btn3 = tk.Radiobutton(frame_root1, text="three", value=3, variable=var_sel, bg="blue", command=show_selected)
 radio_btn3.grid(row=0, column=2)
 
-print(var_sel.get())
+
 # show window and get into event loop
 top_win.mainloop()

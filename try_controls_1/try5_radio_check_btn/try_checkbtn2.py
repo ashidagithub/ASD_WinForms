@@ -25,32 +25,43 @@ top_win.geometry(win_size_pos)
 
 
 # Step1: Create frame
-frame_root1 = tk.Frame(top_win, bg="grey", width=760, height=200)
+frame_root1 = tk.Frame(top_win, bg="grey", width=760, height=300)
 # frame_root1.pack()
 frame_root1.place(x=20, y=20)
 
+
+# Step1.5: add an information textbox
+text_info = tk.Text(frame_root1, bg="yellow", width=100, height=10)
+text_info.place(x=20, y=60)
+
+
 # Step2: Appedn other controls
-# 单选框
-var_sel = tk.IntVar()
-var_sel.set(0)  # default value
+# 复选框
 text_of_btn = ('北京', '上海', '广州', '深圳')
-value_of_btn = (0, 1, 2, 3)
+v1 = tk.IntVar()
+v2 = tk.IntVar()
+v3 = tk.IntVar()
+v4 = tk.IntVar()
+value_of_btn = (v1, v2, v3, v4)
 
 
 def show_selected():
-    v = var_sel.get()
-    print(text_of_btn[v])
+    print('--- Sn - Value --- ')
+    all_selected = ''
+    for idx, v in enumerate(value_of_btn):
+        print(idx, '-', v.get())
+        if v.get() == True:
+            all_selected += '%s ' % text_of_btn[idx]
+    all_selected += '\n'
+    text_info.insert ('insert',all_selected)
     return
 
-
 for idx in range(4):
-    '''
-    tk.Radiobutton(frame_root1, variable=var_sel,
-                   text=text_of_btn[idx], value=idx).pack()
-    '''
-    rad_btn = tk.Radiobutton(frame_root1, variable=var_sel,
-                         text=text_of_btn[idx], value=value_of_btn[idx], command=show_selected)
-    rad_btn.place(x=20 + idx * 190, y=40)
+    chk_btn = tk.Checkbutton(
+        frame_root1, text=text_of_btn[idx], variable=value_of_btn[idx], command=show_selected)
+    chk_btn.place(x=20 + idx * 190, y=20)
+
+
 
 # show window and get into event loop
 top_win.mainloop()
