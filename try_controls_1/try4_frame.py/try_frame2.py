@@ -5,7 +5,7 @@
 # created:  2019.11
 
 # Description:
-#   初步学习 WinForm 编程 ( Frame )
+#   初步学习 WinForm 编程 ( LabelFrame )
 # ------------------------(max to 80 columns)-----------------------------------
 
 import tkinter as tk
@@ -34,9 +34,16 @@ frame_root1.place(x=20, y=20)
 lbl_test = tk.Label(frame_root1, text='text in frame')
 lbl_test.place(x=20, y=60)
 
-# as a contrast
-lbl_win = tk.Label(top_win, text='text in main window')
-lbl_win.place(x=20, y=20)
+
+# Step3: Create Label Frame
+frame_root2 = tk.LabelFrame(top_win, bg="grey", width=760, height=200, text='My Frame')
+# frame_root1.pack()
+frame_root2.place(x=20, y=240)
+
+
+# Step4: Appedn other controls
+lbl_test = tk.Label(frame_root2, text='text in label frame')
+lbl_test.place(x=20, y=60)
 
 
 
