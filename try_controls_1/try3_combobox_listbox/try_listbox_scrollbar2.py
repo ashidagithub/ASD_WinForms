@@ -32,7 +32,7 @@ MULTIPLE: 你可以选择任何的行数一次。点击任何行切换是否被�
 EXTENDED: 你可以选择任何一次行相邻组的第一行上点击并拖动到最后一行.
 '''
 character = ("梅长苏","誉王","飞流","夏冬","霓凰郡主","蒙挚","萧景睿","谢玉")
-lb_characters = tk.Listbox(top_win, selectmode=tk.SINGLE)
+lb_characters = tk.Listbox(top_win, selectmode=tk.EXTENDED)
 for n in character:
     lb_characters.insert('end', n)
 lb_characters.place(x=20, y=20, width=80, height=200)
@@ -52,10 +52,12 @@ for i in range(len(players)):
 
 # ----------------------------------------
 def show_msg(*args):
+    #print('args=', args)
     indexs = lb_characters.curselection()
-    print(indexs)
-    index = indexs[0]
-    lb_players.select_set(index)
+    if (len(indexs)>0):
+        print('characters indexs=', indexs)
+        player_index = indexs[0]
+        lb_players.select_set(player_index)
     return
 
 
