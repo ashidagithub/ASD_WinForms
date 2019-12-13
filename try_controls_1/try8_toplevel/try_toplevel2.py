@@ -24,34 +24,21 @@ win_size_pos = '800x600'
 top_win.geometry(win_size_pos)
 
 # ------------------------------
-
-
-def cmd_undo():
-    tk.messagebox.showinfo(title='Info', message='Undo sth.')  # 提示信息对话窗
+# 所有toplevel 的选项可参见
+# https://blog.csdn.net/qq_41556318/article/details/85597698
+# https://blog.csdn.net/qq_41556318/article/details/85598325
+def create_subwin():
+    sub_win = tk.Toplevel(top_win, bg='red')
+    sub_win.title('Python')
+    sub_win.attributes('-alpha',0.8)
+    msg = tk.Message(sub_win, text='I love study')
+    msg.pack()
     return
 
-
-def cmd_redo():
-    tk.messagebox.showinfo(title='Info', message='Redo sth.')  # 提示信息对话窗
-    return
-
-
-menubar = tk.Menu(top_win)
-menubar.add_command(label='Undo', command=cmd_undo)
-menubar.add_command(label='Redo', command=cmd_redo)
-
-frame = tk.Frame(top_win, width=400, height=400, bg='red')
-frame.pack()
-
-
-def popup(event):
-    menubar.post(event.x_root, event.y_root)
-
-
-frame.bind("<Button-3>", popup)
-
-
+btn_create = tk.Button(top_win, text='Create a sub win', command=create_subwin)
+btn_create.pack()
 # ------------------------------
+
 
 # show window and get into event loop
 top_win.mainloop()
