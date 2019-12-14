@@ -51,7 +51,7 @@ def func_comb2_selected(event):
 def refresh_lbl():
     p = combo_province.get()
     c = combo_city.get()
-    lbl_info['text'] = '地址：%s %s' % (p, c)
+    lbl_info['text'] = 'Address is %s %s' % (p, c)
     return
 # -------------------------------------
 

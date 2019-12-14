@@ -30,7 +30,6 @@ def cmd_undo():
     tk.messagebox.showinfo(title='Info', message='Undo sth.')  # 提示信息对话窗
     return
 
-
 def cmd_redo():
     tk.messagebox.showinfo(title='Info', message='Redo sth.')  # 提示信息对话窗
     return
@@ -43,11 +42,8 @@ menubar.add_command(label='Redo', command=cmd_redo)
 frame = tk.Frame(top_win, width=400, height=400, bg='red')
 frame.pack()
 
-
 def popup(event):
     menubar.post(event.x_root, event.y_root)
-
-
 frame.bind("<Button-3>", popup)
 
 

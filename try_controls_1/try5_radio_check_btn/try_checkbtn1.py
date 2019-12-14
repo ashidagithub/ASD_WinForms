@@ -49,7 +49,11 @@ def show_selected():
 
 for idx in range(4):
     chk_btn = tk.Checkbutton(
-        frame_root1, text=text_of_btn[idx], variable=value_of_btn[idx], command=show_selected)
+        frame_root1,
+        text=text_of_btn[idx],
+        variable=value_of_btn[idx],
+        command=show_selected
+        )
     chk_btn.place(x=20 + idx * 190, y=40)
 
 

@@ -48,8 +48,13 @@ for idx in range(4):
     tk.Radiobutton(frame_root1, variable=var_sel,
                    text=text_of_btn[idx], value=idx).pack()
     '''
-    rad_btn = tk.Radiobutton(frame_root1, variable=var_sel,
-                         text=text_of_btn[idx], value=value_of_btn[idx], command=show_selected)
+    rad_btn = tk.Radiobutton(
+        frame_root1,
+        variable=var_sel,
+        text=text_of_btn[idx],
+        value=value_of_btn[idx],
+        command=show_selected
+        )
     rad_btn.place(x=20 + idx * 190, y=40)
 
 # show window and get into event loop

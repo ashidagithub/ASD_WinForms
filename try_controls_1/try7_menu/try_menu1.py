@@ -38,8 +38,8 @@ top_menu = tk.Menu(top_win)
 
 # Create first dropdown menu
 filemenu = tk.Menu(top_menu, tearoff=False)
-filemenu.add_command(label="Open", command=cmd_menu_item)
-filemenu.add_command(label="Save", command=cmd_menu_item)
+filemenu.add_command(label="Open", command=None)
+filemenu.add_command(label="Save", command=None)
 filemenu.add_separator()
 filemenu.add_command(label="Quit", command=top_win.quit)
 # add dropdown menu1 to top menu

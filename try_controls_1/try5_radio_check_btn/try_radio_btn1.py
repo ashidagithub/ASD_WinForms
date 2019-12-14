@@ -45,7 +45,7 @@ def show_selected():
     print(var_sel.get())
     return
 
-radio_btn1 = tk.Radiobutton(frame_root1, text="one", value=1, variable=var_sel, bg="blue", command=show_selected)
+radio_btn1 = tk.Radiobutton(frame_root1, text="one", value=1, variable=var_sel, bg="blue", fg='white', command=show_selected)
 radio_btn1.grid(row=0, column=0)
 
 radio_btn2 = tk.Radiobutton(frame_root1, text="two", value=2, variable=var_sel, bg="blue", command=show_selected)
