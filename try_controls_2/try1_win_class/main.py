@@ -6,6 +6,7 @@
 
 # Description:
 #   初步学习 WinForm 编程 ( Window Class)
+#   Change to VS Code
 # ------------------------(max to 80 columns)-----------------------------------
 
 import tkinter as tk
