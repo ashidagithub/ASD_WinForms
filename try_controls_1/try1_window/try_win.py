@@ -27,7 +27,7 @@ top_win.title('Hello World Window')
 win_size_pos = '800x600'
 top_win.geometry(win_size_pos)
 
-'''
+
 image = Image.open(r'mybk.jpg')
 bk_img = ImageTk.PhotoImage(image)
 # print(bk_img)
@@ -45,7 +45,7 @@ win_size_pos = "%dx%d+%d+%d" % (window_w, window_h, x, y)
 lbl_bk = tk.Label(top_win, image=bk_img)
 lbl_bk.place(x=0, y=0, relwidth=1, relheight=1)
 '''
-
+'''
 
 # show window and get into event loop
 top_win.mainloop()

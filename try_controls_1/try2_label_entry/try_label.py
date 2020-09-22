@@ -21,8 +21,8 @@ top_win.title('Hello World Window')
 top_win.geometry('800x600')
 
 # Try 1: 用 lable 显示背景图片
-image = Image.open(r'mybk.jpg')
-bk_img = ImageTk.PhotoImage(image)
+#image = Image.open(r'mybk.jpg')
+bk_img = ImageTk.PhotoImage(Image.open(r'mybk.jpg'))
 # 放置背景图片
 lbl_bk = tk.Label(top_win, image=bk_img)
 lbl_bk.place(x=0, y=0, relwidth=1, relheight=1)
