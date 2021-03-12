@@ -14,6 +14,7 @@ import tkinter as tk
 pip install pillow
 '''
 from PIL import Image, ImageTk
+import os
 
 # tk._test()  # 测试 tkinter 是否正常工作
 
@@ -27,8 +28,12 @@ top_win.title('Hello World Window')
 win_size_pos = '800x600'
 top_win.geometry(win_size_pos)
 
+fpath = os.getcwd()
+fpath += '\\try_controls_1\\try1_window\\mybk.jpg'
+print(fpath)
 
-image = Image.open(r'mybk.jpg')
+# image = Image.open(r'mybk.jpg')
+image = Image.open(fpath)
 bk_img = ImageTk.PhotoImage(image)
 # print(bk_img)
 window_w = bk_img.width()
